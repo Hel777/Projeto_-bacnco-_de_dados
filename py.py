@@ -10,18 +10,26 @@ class banco_dados:
         self.tabela()
 
     def banco(self):
-
         self.conn = sqlite3.connect("Dados_clientes.db")
         self.cursor = self.conn.cursor()
 
     def tabela(self):
         self.cursor.execute(
-            """ CREATE TABLE IF NOT EXISTS pessoas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cpf INTEGER, concecionaria TEXT, vendedor TEXT, data_instalacao TEXT, contato TEXT )"""
+            """CREATE TABLE IF NOT EXISTS pessoas (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT,
+                cpf TEXT,
+                concecionaria TEXT,
+                vendedor TEXT,
+                data_instalacao TEXT,
+                contato TEXT
+            )"""
         )
 
-    def inserir(self, nome, CPF, concecionaria, vendedor, data_instalacao, contato):
+    def inserir(self, nome, cpf, concecionaria, vendedor, data_instalacao, contato):
         self.cursor.execute(
-            "INSERT INTO pessoas (nome, cpf, concecionaria, vendedor, data_instalacao, contato) VALUES (?,?,?,?,?,?)", (nome, CPF, concecionaria, vendedor, data_instalacao, contato )
+            "INSERT INTO pessoas (nome, cpf, concecionaria, vendedor, data_instalacao, contato) VALUES (?,?,?,?,?,?)",
+            (nome, cpf, concecionaria, vendedor, data_instalacao, contato),
         )
         self.conn.commit()
 
@@ -39,22 +47,13 @@ class banco_dados:
 
 class application:
     def __init__(self):
-        self.banco = (
-            banco_dados()
-        )  # sso permite que a classe application acesse todos os métodos e atributos da classe banco_dados.
-
+        self.banco = banco_dados()
         self.root = tk.Tk()
         self.config_tela()
         self.widgets()
         self.carregar_dados()
-        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)  # Adiciona este método
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.root.mainloop()
-        
-        
-        
-    def on_closing(self):
-        self.banco.fechar_conexao()
-        self.root.destroy()
 
     def enviar(self):
         nome = self.nome_entry.get()
@@ -65,14 +64,22 @@ class application:
         contato = self.contato_entry.get()
 
         try:
-            if nome and cpf and concecionaria and vendedor and data_instalacao and contato:
+            if (
+                nome
+                and cpf
+                and concecionaria
+                and vendedor
+                and data_instalacao
+                and contato
+            ):
                 with open("arquivo10.txt", "a") as dados10:
-
                     dados10.write(
-                        f"Nome do cliente: {nome} \n cpf do cliente: {cpf} \n Concecionária: {concecionaria} \n Vendedor: {vendedor} \nData de Instalação:  \n {data_instalacao}\n Contato: {contato} \n"
+                        f"Nome do cliente: {nome}\nCPF do cliente: {cpf}\nConcecionária: {concecionaria}\nVendedor: {vendedor}\nData de Instalação: {data_instalacao}\nContato: {contato}\n\n"
                     )
 
-                self.banco.inserir(nome, cpf, concecionaria, vendedor, data_instalacao, contato)
+                self.banco.inserir(
+                    nome, cpf, concecionaria, vendedor, data_instalacao, contato
+                )
 
                 messagebox.showinfo("Dados enviados com Sucesso")
 
@@ -83,11 +90,11 @@ class application:
                 self.data_instalacao_entry.delete(0, tk.END)
                 self.contato_entry.delete(0, tk.END)
 
-                self.carregar_dados()  # Atualiza a Treeview após inserção
+                self.carregar_dados()
 
         except Exception as e:
-            print(f"Ouve um erro de {e}")
-            messagebox.showerror("Ouve um erro")
+            print(f"Ocorreu um erro: {e}")
+            messagebox.showerror("Erro", f"Ocorreu um erro: {e}")
 
     def config_tela(self):
         self.root.configure(bg="#4682B4")
@@ -96,6 +103,8 @@ class application:
         self.root.resizable(False, False)
 
     def widgets(self):
+        # Widgets aqui (mesmo código que você já tem)
+        # ...
 
         # NOME DO CLIENTE
         nome_label = tk.Label(self.root, text="Nome do cliente:")
@@ -111,8 +120,6 @@ class application:
 
         self.cpf_entry = tk.Entry(self.root, fg="black", bg="white")
         self.cpf_entry.place(relx=0.4, rely=0.19)
-
-       
 
         # Concecionária
 
@@ -135,8 +142,8 @@ class application:
         data_instalacao_label = tk.Label(self.root, text="Data da instalacão:")
         data_instalacao_label.place(relx=0.4, rely=0.32)
 
-        self. data_instalacao_entry = tk.Entry(self.root, fg="black", bg="white")
-        self. data_instalacao_entry.place(relx=0.4, rely=0.34)
+        self.data_instalacao_entry = tk.Entry(self.root, fg="black", bg="white")
+        self.data_instalacao_entry.place(relx=0.4, rely=0.34)
 
         # contato do cliente
 
@@ -163,7 +170,7 @@ class application:
             columns=(
                 "ID",
                 "Nome",
-                "CPF",
+                "cpf",
                 "Concecionária",
                 "Vendedor",
                 "Data_instalação",
@@ -174,7 +181,7 @@ class application:
 
         self.tree.heading("ID", text="ID")
         self.tree.heading("Nome", text="Nome")
-        self.tree.heading("CPF", text="CPF")
+        self.tree.heading("cpf", text="CPF")
         self.tree.heading("Concecionária", text="Concecionária")
         self.tree.heading("Vendedor", text="Vendedor")
         self.tree.heading("Data_instalação", text="Data_instalação")
@@ -182,26 +189,23 @@ class application:
 
         self.tree.place(relx=0.032, rely=0.5, width=1200, height=400)
 
+        scrollbar = ttk.Scrollbar(self.root, orient="vertical", command=self.tree.yview)
+        scrollbar.place(relx=0.96, rely=0.5, height=400)  # Posicionar a barra de rolagem
+
+        self.tree.configure(yscrollcommand=scrollbar.set)
+
     def carregar_dados(self):
-
-        # limpar a treeview antes de carregar novos dados
-
         for row in self.tree.get_children():
             self.tree.delete(row)
 
-        dados = self.banco.buscar_todos()  # Atualiza a Treeview após inserção
-
-        # INSERIR DADOS NA TREEVIEW
+        dados = self.banco.buscar_todos()
 
         for row in dados:
             self.tree.insert("", "end", values=row)
 
     def deletar_selecionado(self):
-
         try:
-            item_selecionado = self.tree.selection()[
-                0
-            ]  # para pegar o primeiro item selecionado
+            item_selecionado = self.tree.selection()[0]
             id_para_deletar = self.tree.item(item_selecionado)["values"][0]
 
             confirmacao = messagebox.askyesno(
@@ -210,13 +214,8 @@ class application:
             )
 
             if confirmacao:
-                # deleta o dado do banco de dados
                 self.banco.deletar(id_para_deletar)
-
                 messagebox.showinfo("Sucesso", "Registro deletado com sucesso.")
-
-                # Atualizar treeview
-
                 self.carregar_dados()
 
         except IndexError:
@@ -224,7 +223,9 @@ class application:
         except Exception as e:
             messagebox.showerror("Erro", f"Ocorreu um erro ao deletar o registro: {e}")
 
+    def on_closing(self):
+        self.banco.fechar_conexao()
+        self.root.destroy()
+
 
 application()
-
-

@@ -1,0 +1,125 @@
+Nome do cliente: fdsfafaf 
+ CPF: 5732732 
+ Concecionária: dsdsadasd 
+ Vendedor: sdsadsadd 
+ Data de Instalação: sadasd 
+ Contato: dsadsa 
+Nome do cliente: ewewqewew 
+ idade do cliente: 45454545 
+ Concecionária: ewewqe 
+ Vendedor: ewewqe 
+ Contato: ewqewqe 
+Nome do cliente: ewewqewqe 
+ idade do cliente: 54733254235 
+ Concecionária: gfgfdg 
+ Vendedor: gfdsgfs 
+ Contato: gfgfsg 
+Nome do cliente: qdsadsadsa 
+ idade do cliente: 2572572 
+ Concecionária: vvdsvs 
+ Vendedor: vdvds 
+ Contato: vdsvds 
+Nome do cliente: dsdsdsad 
+ idade do cliente: 57857258 
+ Concecionária: hfhgfdggfd 
+ Vendedor: gfdgfdsgg 
+ Contato: gfgfdsgfdsg 
+Nome do cliente: dsdsad 
+ cpf do cliente: 7852872g 
+ Concecionária: gfgfgg 
+ Vendedor: gfgfgf 
+ Contato: gfgf 
+Nome do cliente: REFDFDFD 
+ cpf do cliente: 444 
+ Concecionária: FDFDF 
+ Vendedor: FDFDFFD 
+ Contato: FDFDF 
+Nome do cliente: DASDSD 
+ cpf do cliente: 55 
+ Concecionária: HFD 
+ Vendedor: GFGF 
+ Contato: FGF 
+Nome do cliente: hghhd 
+ cpf do cliente: 7552152 
+ Concecionária: fghgfhg 
+ Vendedor: hghg 
+Data de Instalação:  
+ hghg
+ Contato: hghg 
+Nome do cliente: dsdsad
+CPF do cliente: 275275
+Concecionária: afada
+Vendedor: sfafdsaf
+Data de Instalação: fdsfsda
+Contato: fssafdsa
+
+Nome do cliente: dsdsad
+CPF do cliente: 0235355
+Concecionária: afada
+Vendedor: sfafdsaf
+Data de Instalação: fdsfsda
+Contato: fssafdsa
+
+Nome do cliente: dsdsad
+CPF do cliente: 2
+Concecionária: afada
+Vendedor: sfafdsaf
+Data de Instalação: fdsfsda
+Contato: fssafdsa
+
+Nome do cliente: helberth
+CPF do cliente: 03503994505
+Concecionária: parvi byd
+Vendedor: Carlos
+Data de Instalação: 11/22/25
+Contato: 34891107
+
+Nome do cliente: dsds
+CPF do cliente: 2522
+Concecionária: bfdbfdbb
+Vendedor: bfbfd
+Data de Instalação: bfdbfdb
+Contato: 2252572
+
+Nome do cliente: dsds
+CPF do cliente: 2522
+Concecionária: bfdbfdbb
+Vendedor: bfbfd
+Data de Instalação: bfdbfdb
+Contato: 2252572
+
+Nome do cliente: dsdsaqdsad
+CPF do cliente: 2572
+Concecionária: vsvsd
+Vendedor: vdsvdsv
+Data de Instalação: vdsvds
+Contato: vdsvdsv
+
+Nome do cliente: adsadsa
+CPF do cliente: 421
+Concecionária: fsvfs
+Vendedor: vfsvf
+Data de Instalação: vfvf
+Contato: vfvf
+
+Nome do cliente: adsadsa
+CPF do cliente: 421
+Concecionária: fsvfs
+Vendedor: vfsvf
+Data de Instalação: vfvf
+Contato: 9988899
+
+Nome do cliente: DSAADAS
+CPF do cliente: 125257257
+Concecionária: NGBNGSS
+Vendedor: GSBNG
+Data de Instalação: NGFN
+Contato: NGFNGF
+
+Nome do cliente: Helberth de Jesusu Oliveira
+CPF do cliente: 03503994505
+Concecionária: BYD - Parvi
+Vendedor: Rosa
+Data de Instalação: 21/05/25
+Contato: 71956458545
+
