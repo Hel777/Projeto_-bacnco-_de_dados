@@ -123,3 +123,24 @@ Vendedor: Rosa
 Data de Instalação: 21/05/25
 Contato: 71956458545
 
+Nome do cliente: Helberth de Jesus Oliveira
+CPF do cliente: 03503994505
+Concecionária: PARVI-PARALELA
+Vendedor: ROSA
+Data de Instalação: 11/05/26
+Contato: 71999997659
+
+Nome do cliente: FF 
+ cpf do cliente: EFEF 
+ Concecionária: FEFE 
+ Vendedor: FEFEW 
+Data de Instalação:  
+ FEWF
+ Contato: FEFE 
+Nome do cliente: helbert de Jesus Oliveira 
+ cpf do cliente: 03503994505 
+ Concecionária: parvi - paralela 
+ Vendedor: Rosa 
+Data de Instalação:  
+ 11/05/25
+ Contato: 71955664 
